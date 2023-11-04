@@ -10,3 +10,5 @@
 - Projects can not have been submitted to another event, including other hackathons this weekend.
 - [Code of Conduct](https://drive.google.com/file/d/1RH_TtRu6EOHSbOoiSj2h1Q4jswtVILzE/view)
 - [MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf)
+
+getting vid: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
