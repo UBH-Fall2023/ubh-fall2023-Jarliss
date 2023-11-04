@@ -1,9 +1,12 @@
 var video;
 var txtOutput = "Off";
 
+//handle playing/stopping video
 function videoPlayer(state) {
     video = document.querySelector("#videoElement");
+
     if (state == 'stop') {
+        //stopping video display state
         txtOutput = "Off";
         console.log("Stopping Video");
         const stream = video.srcObject;
@@ -15,6 +18,7 @@ function videoPlayer(state) {
 
 
     } else if (navigator.mediaDevices.getUserMedia) {
+        //display video feed state
         txtOutput = "On";
         console.log("Running Video");
         navigator.mediaDevices.getUserMedia({ video: true })
@@ -27,6 +31,8 @@ function videoPlayer(state) {
     }
     display();
 }
+
+//update output field
 function display(){
     document.getElementById("output").innerHTML = txtOutput;
 }
