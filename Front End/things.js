@@ -13,7 +13,6 @@ function videoPlayer(state) {
             track.stop();
         });
 
-        video.srcObject = null;
 
     } else if (navigator.mediaDevices.getUserMedia) {
         txtOutput = "On";
