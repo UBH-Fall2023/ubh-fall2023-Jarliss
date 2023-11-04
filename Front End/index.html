@@ -10,6 +10,21 @@
                 justify-content: center;
                 align-items: center;
             }
+
+            .output {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #outputTitle {
+                font-size: medium;
+                justify-content: left;
+            }
+
+            #outputTitle {
+                font-size: medium;
+                justify-content: center;
+            }
         </style>
     </head>
 
@@ -19,7 +34,18 @@
 
         </video>
 
-        <button id="Start" onclick="videoStart()">Start</button>
+        <button id="Start" onclick="videoPlayer()">Start</button>
+        <button id="Stop" onclick="videoPlayer('stop')">Stop</button>
+    </div>
+
+    <div class="textOutput">
+        <h1 id="outputTitle">
+            Translated Text: 
+        </h1>
+
+        <p id="outputText">
+            <span id="output"></span>
+        </p>
     </div>
 
         <code>

@@ -1,8 +1,23 @@
-function videoStart() {
+var video;
+var txtOutput = "Off";
 
-    var video = document.querySelector("#videoElement");
+function videoPlayer(state) {
+    video = document.querySelector("#videoElement");
+    if (state == 'stop') {
+        txtOutput = "Off";
+        console.log("Stopping Video");
+        const stream = video.srcObject;
+        const tracks = stream.getTracks();
 
-    if (navigator.mediaDevices.getUserMedia) {
+        tracks.forEach((track) => {
+            track.stop();
+        });
+
+        video.srcObject = null;
+
+    } else if (navigator.mediaDevices.getUserMedia) {
+        txtOutput = "On";
+        console.log("Running Video");
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
                 video.srcObject = stream;
@@ -11,4 +26,8 @@ function videoStart() {
                 console.log(err0r);
             });
     }
+    display();
+}
+function display(){
+    document.getElementById("output").innerHTML = txtOutput;
 }
